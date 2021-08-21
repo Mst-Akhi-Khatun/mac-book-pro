@@ -25,35 +25,35 @@
                     </div>
                     <div class="pb-5">
                         <h5>Memory</h5>
-                        <button id="8gb-memory">8GB unified memory</button>
-                        <button id="16gb-memory">16GB unified memory</button>                        
+                        <button onclick="updateMemoryPrice('0')">8GB unified memory</button>
+                        <button onclick="updateMemoryPrice('180')">16GB unified memory</button>                        
                     </div>
                     <div class="pb-5">
                         <h5>Storage</h5>
-                        <button id="256-gb-ssd">256GB SSD storage</button>
-                        <button id="512-gb-ssd">512GB SSD storage</button>                        
-                        <button id="1tb-ssd">1TB SSD storage</button>                        
+                        <button onclick="updateStoragePrice('0')">256GB SSD storage</button>
+                        <button onclick="updateStoragePrice('100')">512GB SSD storage</button>                        
+                        <button onclick="updateStoragePrice('180')">1TB SSD storage</button>                        
                     </div>
                     <div class="pb-5">
                         <h5>Choose your delivery option</h5>
-                        <button id="aug-25" class="mb-3">Friday,Aug 25 FREE Prime Delivery</button>
-                        <button id="aug-21">Friday,Aug 21 FREE Prime Delivery charge $20</button>                        
+                        <button onclick="updateDeliveryCost('0')" class="mb-3">Friday,Aug 25 FREE Prime Delivery</button>
+                        <button onclick="updateDeliveryCost('20')">Friday,Aug 21 FREE Prime Delivery charge $20</button>                        
                     </div>
                     <div>
                         <div class="row pb-3">
                             <div class="col-6">
                                 <h5 class="border-bottom p-2">Best Price  $<span id="best-price">1299</span></h5>
-                                <h5 class="border-bottom p-2">Extra Memory Cost $<span id="extra-memory">0</span></h5>
-                                <h5 class="border-bottom p-2">Extra Storage Cost $<span id="extra-storage">0</span></h5>
-                                <h5 class="border-bottom-3 p-2">Delivery charge $<span id="delivery-charge">0</span></h5>
+                                <h5 class="border-bottom p-2">Extra Memory Cost $<span id="memory-cost">0</span></h5>
+                                <h5 class="border-bottom p-2">Extra Storage Cost $<span id="storage-cost">0</span></h5>
+                                <h5 class="p-2">Delivery charge $<span id="delivery-cost">0</span></h5><hr style="border:2px solid black">
                                 <h5>Total Price $<span id="total-price">0</span></h5>
                             </div>
                             <div class="col-6"></div>
                         </div>
                         <div>
                            <p>Add promo code</p>
-                           <input class="p-1" type="text"> 
-                           <button class="btn btn-danger">Apply</button>
+                           <input id="code-field" class="p-1" type="text"> 
+                           <button id="promo-btn" class="btn btn-danger">Apply</button>
                         </div>
                         
                     </div>
@@ -62,7 +62,7 @@
             
         </section>
         <section class="text-center p-3">
-            <h2>Total: $1299</h2>
+            <h2>Total: $ <span id="grand-total">1299</span></h2>
         </section>
     </main>
 
