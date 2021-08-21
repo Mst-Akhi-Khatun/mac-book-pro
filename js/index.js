@@ -1,50 +1,56 @@
-
-const bestPrice = document.getElementById("best-price");
+// get elements
+const bestAmount = document.getElementById("best-amount");
 const memoryCost = document.getElementById("memory-cost");
 const storageCost = document.getElementById("storage-cost");
-const deliveryCost = document.getElementById("delivery-cost");
-const totalPrice = document.getElementById("total-price");
-const grandTotal = document.getElementById("grand-total");
-const inpuField = document.getElementById("code-field");
+const deliveryCharge = document.getElementById("delivery-charge");
+const subTotal = document.getElementById("total-amount");
+const total = document.getElementById("grand-total");
+const codeField = document.getElementById("input-field");
 
-// Updating Memory Price
-function updateMemoryPrice(amount) {
+// Update Memory Amount
+function updateMemoryCost(amount) {
     memoryCost.innerText = amount;
-    updateTotal();
+    updateSubTotal();
     updateGrandTotal();
 }
 
-// Updating Storage Price
-function updateStoragePrice(amount) {
+// Update Storage Amount
+function updateStorageCost(amount) {
     storageCost.innerText = amount;
-    updateTotal();
+    updateSubTotal();
     updateGrandTotal();
 }
 
-// Updating Delivery Cost
-function updateDeliveryCost(amount) {
-    deliveryCost.innerText = amount;
-    updateTotal();
+// Update Shipping Cost
+function updateDeliveryCharge(amount) {
+    deliveryCharge.innerText = amount;
+    updateSubTotal();
     updateGrandTotal();
 }
 
-// Updating Total Price
-function updateTotal() {
-    totalPrice.innerText = Number(bestPrice.innerText) + Number(memoryCost.innerText) + Number(storageCost.innerText) + Number(deliveryCost.innerText);
+// Getting Total Amounts
+function addAllPrices() {
+    const totalAmount = Number(bestAmount.innerText) + Number(memoryCost.innerText) + Number(storageCost.innerText) + Number(deliveryCharge.innerText);
+    return totalAmount;
 }
 
-// Updating Grand Total Price
+// Update Total Amount
+function updateSubTotal() {
+    subTotal.innerText = addAllPrices();
+}
+
+// Update GrandTotal Amount
 function updateGrandTotal() {
-    grandTotal.innerText = Number(bestPrice.innerText) + Number(memoryCost.innerText) + Number(storageCost.innerText) + Number(deliveryCost.innerText);
+    total.innerText = addAllPrices();
 }
 
-// Updating Grand Total Price Using Promo-Code
-document.getElementById('promo-btn').addEventListener('click', function() {
-    const promoCode ="stevekaku";  //promo code
-    const discount = (totalPrice.innerText * 20) / 100; // getting discount
-    if (inpuField.value.toLowerCase() == promoCode.toLocaleLowerCase()) {
-        grandTotal.innerText = totalPrice.innerText - discount;
+// Using Promo-Code
+document.getElementById('code-btn').addEventListener('click', function() {
+    const promoCode ="stevekaku";  // code
+    const discount = (subTotal.innerText * 20) / 100; // discount
+    if (codeField.value.toLowerCase() == promoCode.toLocaleLowerCase()) {
+        total.innerText = subTotal.innerText - discount;
     }
-    // clear input field
-    inpuField.value = '';
+    // clear input Value
+    codeField.value = '';
 })
