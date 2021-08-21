@@ -41,9 +41,9 @@ function updateGrandTotal() {
 // Updating Grand Total Price Using Promo-Code
 document.getElementById('promo-btn').addEventListener('click', function() {
     const promoCode ="stevekaku";  //promo code
-    const discount = (grandTotal.innerText * 20) / 100; // getting discount
+    const discount = (totalPrice.innerText * 20) / 100; // getting discount
     if (inpuField.value.toLowerCase() == promoCode.toLocaleLowerCase()) {
-        grandTotal.innerText = grandTotal.innerText - discount;
+        grandTotal.innerText = totalPrice.innerText - discount;
     }
     // clear input field
     inpuField.value = '';

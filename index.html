@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mac Book</title>
     <!-- Bootstrap css Link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
@@ -12,11 +12,11 @@
 <body>    
     <main class="pb-5">
         <section class="container pt-5 pb-3 border-bottom">
-            <div class="row">
-                <div class="col-6">
+            <div class="row g-5">
+                <div class="col-4">
                     <img class="img-fluid" src="images/mac.png" alt="">
                 </div>
-                <div class="col-6">
+                <div class="col-8">
                     <div>
                         <h1>Customize your Blue 24-inch iMac with Apple M1 chip.</h1>
                         <p>
@@ -25,19 +25,19 @@
                     </div>
                     <div class="pb-5">
                         <h5>Memory</h5>
-                        <button onclick="updateMemoryPrice('0')">8GB unified memory</button>
-                        <button onclick="updateMemoryPrice('180')">16GB unified memory</button>                        
+                        <button onclick="updateMemoryPrice(0)" class="btn btn-outline-secondary">8GB unified memory</button>
+                        <button onclick="updateMemoryPrice(180)" class="btn btn-outline-secondary">16GB unified memory</button>                        
                     </div>
                     <div class="pb-5">
                         <h5>Storage</h5>
-                        <button onclick="updateStoragePrice('0')">256GB SSD storage</button>
-                        <button onclick="updateStoragePrice('100')">512GB SSD storage</button>                        
-                        <button onclick="updateStoragePrice('180')">1TB SSD storage</button>                        
+                        <button onclick="updateStoragePrice(0)" class="btn btn-outline-secondary">256GB SSD storage</button>
+                        <button onclick="updateStoragePrice(100)" class="btn btn-outline-secondary">512GB SSD storage</button>                        
+                        <button onclick="updateStoragePrice(180)" class="btn btn-outline-secondary">1TB SSD storage</button>                        
                     </div>
                     <div class="pb-5">
                         <h5>Choose your delivery option</h5>
-                        <button onclick="updateDeliveryCost('0')" class="mb-3">Friday,Aug 25 FREE Prime Delivery</button>
-                        <button onclick="updateDeliveryCost('20')">Friday,Aug 21 FREE Prime Delivery charge $20</button>                        
+                        <button onclick="updateDeliveryCost(0)" class="btn btn-outline-secondary">Friday,Aug 25 FREE Prime Delivery</button>
+                        <button onclick="updateDeliveryCost(20)" class="btn btn-outline-secondary">Friday,Aug 21 FREE Prime Delivery charge $20</button>                        
                     </div>
                     <div>
                         <div class="row pb-3">
@@ -45,8 +45,9 @@
                                 <h5 class="border-bottom p-2">Best Price  $<span id="best-price">1299</span></h5>
                                 <h5 class="border-bottom p-2">Extra Memory Cost $<span id="memory-cost">0</span></h5>
                                 <h5 class="border-bottom p-2">Extra Storage Cost $<span id="storage-cost">0</span></h5>
-                                <h5 class="p-2">Delivery charge $<span id="delivery-cost">0</span></h5><hr style="border:2px solid black">
-                                <h5>Total Price $<span id="total-price">0</span></h5>
+                                <h5 class="p-2">Delivery charge $<span id="delivery-cost">0</span></h5>
+                                <hr style="border:2px solid black">
+                                <h5>Total Price $<span id="total-price">1299</span></h5>
                             </div>
                             <div class="col-6"></div>
                         </div>
@@ -54,8 +55,7 @@
                            <p>Add promo code</p>
                            <input id="code-field" class="p-1" type="text"> 
                            <button id="promo-btn" class="btn btn-danger">Apply</button>
-                        </div>
-                        
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -69,6 +69,6 @@
     <!-- bootstrap js Link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <!-- javascript Link -->
-        <script src="js/index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
